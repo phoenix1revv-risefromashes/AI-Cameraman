@@ -7,6 +7,14 @@ The system integrates computer vision, embedded control, and real-time motor act
 
 ---
 
+##Current Progress Stage:
+[![Robot Prototype Stage] (AI-Cameraman/05_assets/robot_build_photos/current-progress.png)] (https://sofiauniversity-my.sharepoint.com/:f:/g/personal/santosh_bogati_sofia_edu/IgA31v3vTGQQS7aVL7Cg1fQVARlYgo7sM40RWyne4M3HtHk?e=OIZYYl
+)
+
+
+## For progress videos"
+
+
 ## System Architecture
 
 Raspberry Pi (High-Level Control)
