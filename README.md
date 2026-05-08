@@ -19,6 +19,8 @@ The long-term goal is to develop a fully autonomous robotic cinematography platf
 ## Current Prototype Stage
 
 [![Robot Prototype Stage](05_assets/robot_build_photos/current-progress.png)](https://sofiauniversity-my.sharepoint.com/:f:/g/personal/santosh_bogati_sofia_edu/IgA31v3vTGQQS7aVL7Cg1fQVARlYgo7sM40RWyne4M3HtHk?e=OIZYYl)
+Click in the picture to see the video demos: 
+
 
 Current development stage focuses on:
 

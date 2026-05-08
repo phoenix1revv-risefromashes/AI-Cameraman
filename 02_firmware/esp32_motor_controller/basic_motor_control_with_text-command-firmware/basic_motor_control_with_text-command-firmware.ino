@@ -1,34 +1,72 @@
-// MOTOR 1 SLOW FORWARD LOOP
-// ESP32 + BTS7960
-// Pins: RPWM = 14, LPWM = 27
+// =====================================
+// SIMPLE BTS7960 MOTOR TEST
+// =====================================
 
+// Motor control pins
 const int RPWM = 14;
 const int LPWM = 27;
 
-const int freq = 1000;
-const int resolution = 8;
+// Enable pins
+const int R_EN = 25;
+const int L_EN = 26;
 
 void setup() {
+
   Serial.begin(115200);
 
-  ledcAttach(RPWM, freq, resolution);
-  ledcAttach(LPWM, freq, resolution);
+  // Set pins as outputs
+  pinMode(RPWM, OUTPUT);
+  pinMode(LPWM, OUTPUT);
 
-  Serial.println("Motor 1 slow forward loop started");
+  pinMode(R_EN, OUTPUT);
+  pinMode(L_EN, OUTPUT);
+
+  // Enable BTS7960
+  digitalWrite(R_EN, HIGH);
+  digitalWrite(L_EN, HIGH);
+
+  Serial.println("Motor test started");
 }
 
 void loop() {
-  // Forward slow
-  ledcWrite(RPWM, 60);   // speed: 0-255
-  ledcWrite(LPWM, 0);
 
-  Serial.println("Forward slow");
+  // =========================
+  // FORWARD
+  // =========================
+  Serial.println("FORWARD");
+
+  analogWrite(RPWM, 30);
+  analogWrite(LPWM, 0);
+
+  delay(4000);
+
+  // =========================
+  // STOP
+  // =========================
+  Serial.println("STOP");
+
+  analogWrite(RPWM, 0);
+  analogWrite(LPWM, 0);
+
+  delay(2000);
+
+  // =========================
+  // REVERSE
+  // =========================
+  Serial.println("REVERSE");
+
+  analogWrite(RPWM, 0);
+  analogWrite(LPWM, 30);
+
+  delay(4000);
+
+  // =========================
+  // STOP
+  // =========================
+  Serial.println("STOP");
+
+  analogWrite(RPWM, 0);
+  analogWrite(LPWM, 0);
+
   delay(3000);
-
-  // Stop
-  ledcWrite(RPWM, 0);
-  ledcWrite(LPWM, 0);
-
-  Serial.println("Stop");
-  delay(1000);
 }
