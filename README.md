@@ -57,7 +57,7 @@ Decision Layer
        ↓
 Communication Layer
        ↓
-ESP32
+STM32F446RE MCU NUCLEO-F446RE (Upgraded from esp32 due to limitation)
 (Real-Time Embedded Control)
        ↓
 BTS7960 Motor Drivers
@@ -86,7 +86,7 @@ Hardware:
 - 8GB RAM
 - 500GB NVMe SSD
 
-### ESP32 — Real-Time Embedded Controller
+### STM32F446RE MCU NUCLEO-F446RE — Real-Time Embedded Controller
 
 Responsibilities:
 
@@ -98,10 +98,32 @@ Responsibilities:
 
 Communication:
 
-- USB serial testing
-- UART communication in progress
+- pi -- STM32 comms successful through SWD system
 
 ---
+
+# Embedded System Architecture Evolution
+
+The project expanded into low-level ARM Cortex-M embedded debugging using a Raspberry Pi 5 configured as a GPIO-based SWD debugger for an STM32 Nucleo-F446RE.
+
+This experimentation involved:
+
+- OpenOCD configuration
+- Linux GPIOD GPIO debugging
+- GPIO-based SWD communication
+- Cortex-M4 CPU detection
+- CPU halt/reset control
+- register inspection
+- flash memory inspection
+- vector table analysis
+- low-level embedded debugging workflows
+
+One important engineering discovery during development was that older Raspberry Pi OpenOCD configurations using:
+
+```text
+bcm2835gpio
+
+
 
 ## Hardware Stack
 
@@ -109,7 +131,7 @@ Communication:
 
 - Raspberry Pi 5, 8GB
 - 500GB NVMe SSD
-- ESP32
+- STM32F446RE MCU NUCLEO-F446RE (upgraded from esp32 due to its limitation)
 - 4 × BTS7960 motor drivers
 - 4 × 12V DC motors with encoders
 - Mecanum chassis
@@ -208,8 +230,7 @@ AI-Cameraman/
 
 Completed:
 
-- ESP32 USB serial communication
-- ping/pong communication testing
+- STM32 -- Rasp-pi communication
 - single motor text-command testing
 - BTS7960 motor driver validation
 - forward/backward/stop motor control
@@ -239,12 +260,6 @@ Detailed investigation is documented in:
 04_hardware/pinout.md
 ```
 
-### UART Communication
-
-Current status:
-
-- USB serial communication works
-- Raspberry Pi to ESP32 UART communication is still under testing
 
 ---
 
@@ -263,7 +278,6 @@ Current status:
 ### In Progress
 
 - stable grounding layout
-- UART communication
 - coordinated 4-motor movement
 - cleaner power distribution
 
@@ -282,7 +296,7 @@ Current status:
 
 ```text
 1. Stabilize grounding and power distribution
-2. Finalize UART communication
+2. Smooth motors moverment control
 3. Enable coordinated 4-motor movement
 4. Implement voice command pipeline
 5. Integrate camera stream processing
