@@ -88,7 +88,7 @@ This document shows the full AI Cameraman architecture from user input to physic
                                 │ UART / USB Serial
                                 ▼
 ┌────────────────────────────────────────────────────────────────────┐
-│                              ESP32                                 │
+│                              STM32 Nucleo-F446RE                                │
 │                                                                    │
 │  Role: real-time motor execution controller                        │
 │                                                                    │

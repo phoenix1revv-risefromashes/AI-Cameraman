@@ -10,8 +10,8 @@ At this stage, the main focus is not yet full autonomy. The focus is building a 
 
 - stable power delivery
 - working motor driver control
-- ESP32 command execution
-- Raspberry Pi ↔ ESP32 communication
+- STM32 Nucleo-F446RE
+- Raspberry Pi ↔ STM32 Nucleo-F446RE communication
 - clean project documentation
 
 ---

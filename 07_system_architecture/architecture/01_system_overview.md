@@ -19,7 +19,7 @@ Decision System
     ↓
 Serial/UART Command
     ↓
-ESP32
+STM32 Nucleo-F446RE
     ↓
 BTS7960 Motor Drivers
     ↓

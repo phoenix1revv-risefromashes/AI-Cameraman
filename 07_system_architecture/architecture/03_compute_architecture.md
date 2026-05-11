@@ -32,7 +32,7 @@ This separation ensures:
                 REAL-TIME EXECUTION (Control Layer)
 
         ┌──────────────────────────────────────────┐
-        │               ESP32                      │
+        │               STM32 Nucleo-F446RE                      │
         │------------------------------------------│
         │ Command Parsing                          │
         │ PWM Generation                           │

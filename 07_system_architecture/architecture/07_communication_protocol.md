@@ -24,6 +24,6 @@ Decision Layer
     ↓
 COMMUNICATION PROTOCOL
     ↓
-ESP32 Execution
+STM32 Nucleo-F446RE
     ↓
 Motor Control
