@@ -113,7 +113,7 @@ The original ESP32 prototyping phase remains preserved within the repository as 
 
 ---
 
-####Hardware Integration
+#### Hardware Integration
 
 - Documented motor wiring and GPIO pin mapping
 - Identified and corrected mirrored motor orientation issue
@@ -271,7 +271,7 @@ AI-Cameraman/
 │       └── protocol.py
 │
 ├── 02_firmware/
-│   └── esp32_motor_controller/
+│   └── STM32_motor_controller/
 │
 ├── 03_tests/
 │   ├── motor_tests/
