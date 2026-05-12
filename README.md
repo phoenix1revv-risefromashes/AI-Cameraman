@@ -1,37 +1,130 @@
-# AI Cameraman
+# AI Cameraman : Autonomous Photographic Camera  Control & Tracking System
 
 ## Overview
 
-AI Cameraman is an autonomous robotics and embedded systems project focused on building a voice-interactive robotic cameraman capable of:
+AI Cameraman (**also known as Autonomous Photographic camera control and tracking system**) --initiated on Apr 27, 2026-- is an autonomous robotics and embedded systems project focused on building a voice-interactive robotic cameraman capable of:
 
 - tracking a human subject
 - following the subject dynamically
 - responding to voice commands
 - capturing photos/videos from multiple cinematic angles
-- performing real-time robotic movement and decision-making
 
-The system combines robotics, embedded systems, real-time motor control, voice interaction, computer vision, autonomous navigation, and distributed system architecture.
+**The system combines robotics, embedded systems, real-time motor control, voice interaction, computer vision, autonomous navigation, and distributed system architecture.**
 
 The long-term goal is to develop a fully autonomous robotic cinematography platform capable of intelligent movement, subject awareness, and voice-guided camera behavior.
 
 ---
 
-## Current Prototype Stage
+## Current Prototype Stage:
 
 [![Robot Prototype Stage](05_assets/robot_build_photos/current-progress.png)](https://sofiauniversity-my.sharepoint.com/:f:/g/personal/santosh_bogati_sofia_edu/IgA31v3vTGQQS7aVL7Cg1fQVARlYgo7sM40RWyne4M3HtHk?e=OIZYYl)
-Click in the picture to see the video demos: 
-
-
-Current development stage focuses on:
-
-- hardware integration
-- power distribution
-- ESP32 communication
-- motor driver validation
-- movement testing
-- system architecture development
+Click the image above to view project progress progress: 
 
 ---
+
+### Currently Working: 
+
+As of May 11, 2026, current development is focused on establishing a low-level SWD debugging and communication pipeline between STM32 and Raspberry Pi 5 using OpenOCD and GPIO-based SWD.
+
+This process includes:
+
+- ARM Cortex-M exploration *(completed)*
+- bare-metal STM32 experimentation *(in progress)*
+- OpenOCD configuration *(completed)*
+- GPIO-based SWD communication *(completed)*
+- register inspection *(completed)*
+- flash memory analysis *(completed)*
+- embedded debugging workflow development *(in progress)*
+- vector table inspection *(completed)*
+- Raspberry Pi 5 GPIO-based SWD debugging *(completed)*
+- Linux GPIOD OpenOCD integration *(completed)*
+
+
+### Current Engineering Milestones Completed
+
+#### System Architecture
+
+- Designed and organized full robotics repository architecture
+- Built distributed robotics system architecture
+- Integrated Raspberry Pi 5 as the high-level control system
+- Organized firmware, hardware, tests, logs, and documentation subsystems
+
+---
+
+#### Embedded Systems Architecture Evolution
+
+The project initially utilized ESP32-based motor control for rapid prototyping and communication experimentation.
+
+As development progressed, limitations were identified in long-term debugging workflow, low-level hardware inspection capability, and scalability for the intended robotics architecture.
+
+To support deeper embedded systems experimentation and more advanced debugging workflows, development transitioned toward STM32-based embedded control exploration.
+
+This transition enabled:
+
+- SWD debugging workflows
+- ARM Cortex-M exploration
+- register-level debugging
+- flash memory inspection
+- vector table analysis
+- lower-level embedded systems experimentation
+- OpenOCD-based debugging pipelines
+
+The original ESP32 prototyping phase remains preserved within the repository as part of the project's engineering evolution.
+
+---
+
+#### STM32 Embedded Debugging
+
+- Established GPIO-based SWD communication between Raspberry Pi 5 and STM32
+- Successfully configured OpenOCD for Raspberry Pi 5 GPIO debugging
+- Solved Raspberry Pi 5 `linuxgpiod` compatibility issue for OpenOCD
+- Successfully detected and initialized ARM Cortex-M4 target
+- Performed live ARM Cortex-M4 CPU register inspection
+- Performed STM32 flash memory inspection
+- Performed STM32 vector table inspection
+- Successfully halted and reset STM32 through SWD debugging interface
+- Explored ARM Cortex-M memory layout and execution flow
+- Built low-level embedded debugging workflow using OpenOCD and Telnet
+
+---
+
+#### Communication Systems
+
+- Implemented USB serial communication testing
+- Implemented ESP32 ping/pong communication testing (initially, now transitioned to STM32)
+- Established initial Raspberry Pi ↔ embedded controller communication pipeline (STM32)
+
+---
+
+#### Motor Control Systems
+
+- Implemented single-motor text-command control testing
+- Successfully controlled BTS7960 motor driver using PWM
+- Designed initial 4-motor control architecture
+- Tested forward, backward, and stop motor commands
+
+---
+
+#### Power System Integration
+
+- Integrated buck converter for 12V → 5V power regulation
+- Designed initial robot power distribution architecture
+- Investigated grounding instability during motor operation
+
+---
+
+####Hardware Integration
+
+- Documented motor wiring and GPIO pin mapping
+- Identified and corrected mirrored motor orientation issue
+- Integrated mecanum wheel drive platform
+- Integrated camera and microphone hardware
+
+
+
+
+---
+
 
 ## Core System Objectives
 
@@ -57,7 +150,8 @@ Decision Layer
        ↓
 Communication Layer
        ↓
-STM32F446RE MCU NUCLEO-F446RE (Upgraded from esp32 due to limitation)
+STM32F446RE Nucleo Board
+(Transitioned from ESP32 prototype architecture to support deeper debugging workflows and more advanced embedded experimentation)
 (Real-Time Embedded Control)
        ↓
 BTS7960 Motor Drivers
@@ -102,26 +196,7 @@ Communication:
 
 ---
 
-# Embedded System Architecture Evolution
 
-The project expanded into low-level ARM Cortex-M embedded debugging using a Raspberry Pi 5 configured as a GPIO-based SWD debugger for an STM32 Nucleo-F446RE.
-
-This experimentation involved:
-
-- OpenOCD configuration
-- Linux GPIOD GPIO debugging
-- GPIO-based SWD communication
-- Cortex-M4 CPU detection
-- CPU halt/reset control
-- register inspection
-- flash memory inspection
-- vector table analysis
-- low-level embedded debugging workflows
-
-One important engineering discovery during development was that older Raspberry Pi OpenOCD configurations using:
-
-```text
-bcm2835gpio
 
 
 
@@ -131,7 +206,8 @@ bcm2835gpio
 
 - Raspberry Pi 5, 8GB
 - 500GB NVMe SSD
-- STM32F446RE MCU NUCLEO-F446RE (upgraded from esp32 due to its limitation)
+- STM32F446RE Nucleo Board
+(Transitioned from ESP32 prototype architecture to support deeper debugging workflows and more advanced embedded experimentation)
 - 4 × BTS7960 motor drivers
 - 4 × 12V DC motors with encoders
 - Mecanum chassis
@@ -253,59 +329,9 @@ Observed behavior:
 - motors stopped unexpectedly when sharing certain ground paths
 - grounding layout requires redesign and validation
 
-Detailed investigation is documented in:
-
-```text
-04_hardware/wiring.md
-04_hardware/pinout.md
-```
 
 
----
 
-## Development Progress
-
-### Completed
-
-- repository architecture designed
-- hardware stack assembled
-- power system integrated
-- motor driver testing completed
-- single motor movement testing completed
-- initial communication testing completed
-- current prototype documented
-
-### In Progress
-
-- stable grounding layout
-- coordinated 4-motor movement
-- cleaner power distribution
-
-### Planned
-
-- voice command integration
-- human detection and tracking
-- autonomous follow behavior
-- camera-based shot framing
-- encoder feedback integration
-- AI-assisted movement behavior
-
----
-
-## Development Roadmap
-
-```text
-1. Stabilize grounding and power distribution
-2. Smooth motors moverment control
-3. Enable coordinated 4-motor movement
-4. Implement voice command pipeline
-5. Integrate camera stream processing
-6. Add human detection and tracking
-7. Implement autonomous follow behavior
-8. Add cinematic movement modes
-9. Add encoder feedback and closed-loop control
-10. Build full autonomous robotic cameraman system
-```
 
 ---
 
