@@ -10,9 +10,9 @@ Develop and flash a bare-metal STM32 program that directly controls the onboard 
 
 - STM32 Nucleo Board
 - Raspberry Pi 5
-- ST-LINK debugger/programmer
+- SWD debugger/programmer
 - OpenOCD
-- ARM GCC Toolchain
+- 
 
 ---
 
@@ -206,7 +206,7 @@ arm-none-eabi-gcc -mcpu=cortex-m4 -mthumb -g -O0 -nostdlib -T linker.ld startup.
 ## Start OpenOCD
 
 ```bash
-openocd -f interface/stlink.cfg -f target/stm32f4x.cfg
+openocd -f stm32-pi.cfg
 ```
 
 ---
