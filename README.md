@@ -73,19 +73,25 @@ The original ESP32 prototyping phase remains preserved within the repository as 
 
 ---
 
-#### STM32 Embedded Debugging
+
+
+#### STM32 Embedded Debugging & Firmware Bring-Up
 
 - Established GPIO-based SWD communication between Raspberry Pi 5 and STM32
 - Successfully configured OpenOCD for Raspberry Pi 5 GPIO debugging
 - Solved Raspberry Pi 5 `linuxgpiod` compatibility issue for OpenOCD
 - Successfully detected and initialized ARM Cortex-M4 target
 - Performed live ARM Cortex-M4 CPU register inspection
-- Performed STM32 flash memory inspection
-- Performed STM32 vector table inspection
-- Successfully halted and reset STM32 through SWD debugging interface
-- Explored ARM Cortex-M memory layout and execution flow
-- Built low-level embedded debugging workflow using OpenOCD and Telnet
+- Performed STM32 flash memory and vector table inspection
+- Successfully halted, reset, and controlled STM32 execution through the SWD debugging interface
+- Built a low-level embedded debugging workflow using OpenOCD and Telnet
+- Completed the first bare-metal STM32 firmware upload and execution test
+- Validated direct register-level GPIO control by flashing an onboard LED blink program to the STM32
 
+
+Detailed procedure, source files, build steps, flashing commands, startup configuration, linker script, and implementation notes are documented in:
+
+`03_tests/stm32_microcontroller_tests/uploading_first_firmware_flashing_led/`
 ---
 
 #### Communication Systems
