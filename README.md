@@ -91,7 +91,7 @@ The original ESP32 prototyping phase remains preserved within the repository as 
 
 Detailed procedure, source files, build steps, flashing commands, startup configuration, linker script, and implementation notes are documented in:
 
-`03_tests/stm32_microcontroller_tests/uploading_first_firmware_flashing_led/`
+`03_tests/stm32_microcontroller_tests/Uploading-1st-Firmware(Flashing LED)/`
 ---
 
 #### Communication Systems
