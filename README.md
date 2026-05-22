@@ -46,7 +46,7 @@ This process includes:
 
 - Designed and organized full robotics repository architecture
 - Built distributed robotics system architecture
-- Integrated Raspberry Pi 5 as the high-level control system
+- Integrated NVIDIA Jetson Nano Super Dev kit for better AI performance( previously Raspberry Pi 5 as the high-level control system)
 - Organized firmware, hardware, tests, logs, and documentation subsystems
 
 ---
@@ -149,7 +149,7 @@ The robot is being designed to:
 
 Voice Commands
        ↓
-Raspberry Pi 5
+- Integrated NVIDIA Jetson Nano Super Dev kit for better AI performance( previously Raspberry Pi 5 as the high-level control system)
 (High-Level Intelligence/RL)
        ↓
 Decision Layer
@@ -169,7 +169,7 @@ Mecanum Wheel Drive System
 
 ## Distributed Control Architecture
 
-### Raspberry Pi 5 — High-Level System
+### - Integrated NVIDIA Jetson Nano Super Dev kit for better AI performance( previously Raspberry Pi 5 as the high-level control system) 
 
 Responsibilities:
 
@@ -182,7 +182,7 @@ Responsibilities:
 
 Hardware:
 
-- Raspberry Pi 5
+- Integrated NVIDIA Jetson Nano Super Dev kit for better AI performance( previously Raspberry Pi 5 as the high-level control system)
 - 8GB RAM
 - 500GB NVMe SSD
 
@@ -210,7 +210,7 @@ Communication:
 
 ### Core Components
 
-- Raspberry Pi 5, 8GB
+- Integrated NVIDIA Jetson Nano Super Dev kit for better AI performance( previously Raspberry Pi 5 as the high-level control system)
 - 500GB NVMe SSD
 - STM32F446RE Nucleo Board
 (Transitioned from ESP32 prototype architecture to support deeper debugging workflows and more advanced embedded experimentation)
@@ -236,7 +236,7 @@ Communication:
 
 ## Software Stack
 
-### Raspberry Pi Side
+### Integrated NVIDIA Jetson Nano Super Dev kit for better AI performance( previously Raspberry Pi 5 as the high-level control system)
 
 - Python
 - serial communication
